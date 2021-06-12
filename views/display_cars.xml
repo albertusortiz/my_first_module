@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <tempĺate id="display_cars" name="Cars">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Cars</h1>
+
+                <a href="/cars/Create">Add New Car</a>
+                <table border="1" width="800">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Horse Power</th>
+                            <th>Doorse Number</th>
+                        </tr>
+                    </thead>
+                    <t-foreadch="cars" t-as="car">
+                        <tbody>
+                            <tr>
+                                <td><t t-esc="car.name" /></td>
+                                <td><t t-esc="car.horse_power" /></td>
+                                <td><t t-esc="car.doors_power" /></td>
+                            </tr>
+                        </tbody>
+                    </t-foreadch=>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
