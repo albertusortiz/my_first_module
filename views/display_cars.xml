@@ -4,6 +4,10 @@
         <t t-call="website.layout">
             <div class="container">
                 <h1>Cars</h1>
+
+                <a href="/cars/create"><i class="fa fa-plus-circle"/>Add New Car</a>
+                <br/>
+                <br/>
                 <table class="table">
                 <thead>
                     <tr>
