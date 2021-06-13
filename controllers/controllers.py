@@ -4,13 +4,17 @@ from odoo.http import request
 
 
 class MyFirstModule(http.Controller):
-    @http.route('/first/', auth='public')
-    def index(self, **kw):
-        print('-----------------First route-----------------')
-        return "Hello from my first route"
+    # @http.route('/first', auth='public')
+    # def index(self, **kw):
+    #     print('-----------------First route-----------------')
+    #     return "Hello from my first route"
 
     
-    @http.route('/first/', auth='public')
+    @http.route('/cars', auth='public', type='http', website=True)
     def display_car(self, **kw):
-        print('-----------------Firt rout-----------------')
-        return "Hello from my first route"
+        print('-----------------Second route-----------------')
+        cars=request.env["car.car"].search([]).sudo()
+        vals={
+            'cars': cars
+        }
+        return request.render('my_first_module.display_cars',vals)

@@ -28,6 +28,8 @@
         'views/homepage.xml',
         'views/car.xml',
         'views/menu.xml',
+        #Website
+        'views/display_cars.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
