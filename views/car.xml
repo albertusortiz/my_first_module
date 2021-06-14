@@ -12,6 +12,10 @@
                             <field name="doors_number"/>
                             <field name="horse_power"/>
                             <field name="driver"/>
+                            <field name="is_sport"/>
+                            <field name="is_truck"/>
+                            <field name="start_date"/>
+                            <field name="file"/>
                         </group>
                     </group>
                 </sheet>
@@ -28,6 +32,10 @@
                 <field name="doors_number"/>
                 <field name="horse_power"/>
                 <field name="driver"/>
+                <field name="is_sport"/>
+                <field name="is_truck"/>
+                <field name="start_date"/>
+                <field name="file"/>
             </tree>
         </field>
     </record>

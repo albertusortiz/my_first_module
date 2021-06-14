@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
-
+import base64
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
@@ -42,12 +42,21 @@ class MyFirstModule(http.Controller):
         doors_number = kw.get("doors_number")
         horse_power = kw.get("horse_power")
         driver = kw.get("driver")
+        is_truck = kw.get("is_truck")
+        is_sport = kw.get("is_sport")
+        start_date = kw.get("start_date")
+        if kw['file']:
+            file = kw.get("file").stream.read()
 
         request.env['car.car'].create({
             'name': name,
             'doors_number': doors_number,
             'horse_power': horse_power,
             'driver': driver,
+            'is_truck': True if is_truck else False,
+            'is_sport': True if is_sport else False,
+            'start_date': start_date,
+            'file': base64.encodestring(file),
         })
         
         return request.redirect("/cars")
