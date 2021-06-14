@@ -31,6 +31,7 @@
         #Website
         'views/display_cars.xml',
         'views/create_car_form.xml',
+        'views/update_car_form.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
