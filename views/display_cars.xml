@@ -15,6 +15,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Doors Number</th>
                     <th scope="col">Horse Power</th>
+                    <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <t t-foreach="cars" t-as="car">       
@@ -24,6 +25,7 @@
                     <td><t t-esc="car.name"/></td>
                     <td><t t-esc="car.doors_number"/></td>
                     <td><t t-esc="car.horse_power"/></td>
+                    <td><a t-attf-href="/update?id=#{car.id}"><i class="fa fa-pencil"/></a></td>
                     </tr>
                 </tbody>
                 </t>
