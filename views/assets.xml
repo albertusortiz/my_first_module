@@ -4,6 +4,7 @@
 
     <xpath expr="." position="inside">
         <link rel="stylesheet" href="/my_first_module/static/src/css/car.css" />
+        <script type="text/javascript" src="/my_first_module/static/src/js/car.js"/>
     </xpath>
 
 </template>
