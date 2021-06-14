@@ -27,13 +27,14 @@
         'security/ir.model.access.csv',
         'views/homepage.xml',
         'views/car.xml',
-        #'views/menu.xml',
+        'views/menu.xml',
         #Website
         'views/display_cars.xml',
         'views/create_car_form.xml',
         'views/update_car_form.xml',
         'views/account_inherit.xml',
         'views/ver_productos.xml',
+        'views/assets.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

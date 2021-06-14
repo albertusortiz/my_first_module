@@ -2,6 +2,12 @@
 from odoo import http
 from odoo.http import request
 
+from odoo.addons.portal.controllers.portal import CustomerPortal
+
+
+class CustomerPortalInherit(CustomerPortal):
+    pass
+
 
 class MyFirstModule(http.Controller):
     @http.route('/ver_productos', auth='public', type='http', website=True)
