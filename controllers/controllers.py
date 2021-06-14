@@ -41,11 +41,13 @@ class MyFirstModule(http.Controller):
         name = kw.get("name")
         doors_number = kw.get("doors_number")
         horse_power = kw.get("horse_power")
+        driver = kw.get("driver")
 
         request.env['car.car'].create({
             'name': name,
             'doors_number': doors_number,
             'horse_power': horse_power,
+            'driver': driver,
         })
         
         return request.redirect("/cars")

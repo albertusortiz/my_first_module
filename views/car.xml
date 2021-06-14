@@ -11,6 +11,7 @@
                             <field name="name"/>
                             <field name="doors_number"/>
                             <field name="horse_power"/>
+                            <field name="driver"/>
                         </group>
                     </group>
                 </sheet>
@@ -26,6 +27,7 @@
                 <field name="name"/>
                 <field name="doors_number"/>
                 <field name="horse_power"/>
+                <field name="driver"/>
             </tree>
         </field>
     </record>
