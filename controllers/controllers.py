@@ -4,9 +4,15 @@ from odoo.http import request
 
 
 class MyFirstModule(http.Controller):
-    # @http.route('/first', auth='public')
-    # def index(self, **kw):
-    #     return "Hello from my first route"
+    @http.route('/ver_productos', auth='public', type='http', website=True)
+    def index(self, **kw):
+        products=request.env["product.template"].search([]).sudo()
+        
+        vals={
+            'products': products
+        }
+        
+        return request.render('my_first_module.ver_productos', vals)
 
     
     @http.route('/cars', auth='public', type='http', website=True)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="ver_productos" name="Tabla de Productos">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Products</h1>
+
+                <a href="/cars/create"><i class="fa fa-plus-circle"/>Add New Product</a>
+                <br/>
+                <br/>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Unidades</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <t t-foreach="products" t-as="product">       
+                <tbody>
+                    <tr>
+                        <th scope="row"><t t-esc="product.id"/></th>
+                        <td><t t-esc="product.type"/></td>
+                        <td><t t-esc="product.weight"/></td>
+                        <td><t t-esc="product.qty_available"/></td>
+                        <td><t t-esc="product.standard_price"/></td>
+                        <t t-set="total" t-value="product.qty_available * product.standard_price" />
+                        <td><t t-esc="total"/></td>
+                    </tr>
+                </tbody>
+                </t>
+            </table>
+            </div>
+        </t>
+    </template>
+</odoo>

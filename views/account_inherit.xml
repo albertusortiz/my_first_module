@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="account_inherit" inherit_id="portal.portal_my_details" name="Account Inherit Website">
+        <!-- <xpath expr="//select[@name='country_id']" position="after">
+            My first inheritance en Odoo 13
+            <input type="text"/>
+        </xpath> -->
+        <xpath expr="//select[@name='country_id']/.." position="replace">
+            <div t-attf-class="form-group col-xl-6">
+                <label class="col form-label" for="country_id">First Inheritance</label>
+                <input type="text" name="inheritance" t-attf-class="form-control"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+
+
