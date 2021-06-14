@@ -66,3 +66,12 @@ class MyFirstModule(http.Controller):
         })
 
         return request.redirect('/cars')
+
+
+    @http.route('/delete', auth='public', type='http', website=True)
+    def delete_cars(self, **kw):
+        id_car=int(kw.get('id'))
+
+        request.env['car.car'].search([('id','=', id_car)]).unlink()
+
+        return request.redirect('/cars')
