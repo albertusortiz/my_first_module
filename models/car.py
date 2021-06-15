@@ -13,6 +13,7 @@ class my_first_module(models.Model):
     is_truck=fields.Boolean('Is Truck')
     start_date=fields.Date('Date')
     file=fields.Binary('File')
+    description=fields.Text('Description')
 
     
 class ResPartnerInherit(models.Model):

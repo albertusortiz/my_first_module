@@ -16,6 +16,7 @@
                             <field name="is_truck"/>
                             <field name="start_date"/>
                             <field name="file"/>
+                            <field name="description"/>
                         </group>
                     </group>
                 </sheet>

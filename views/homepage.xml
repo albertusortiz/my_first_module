@@ -3,13 +3,13 @@
     <template id="homepage_custom" name="Home Page Custom">
         <t t-call="website.layout">
             <div class="container">
+                    <!-- CARROUSEL -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="/my_first_module/static/src/img/car1.jpg" alt="Car 1" />
@@ -21,7 +21,6 @@
                             <img class="d-block w-100" src="/my_first_module/static/src/img/car3.jpg" alt="Car 3" />
                         </div>
                     </div>
-                    
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -30,6 +29,30 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                </div>
+                <!-- FETCH CAR DATA -->
+                <t t-set="cars" t-value="request.env['car.car'].search([],limit=4,order='create_date desc')"/>
+                <!-- CARDS STYLE -->
+                <div class="row" style="margin-top: 50px;">
+                    <t t-foreach="cars" t-as="car">
+                        <div class="col-md-6">
+                            <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                                <div class="card-body d-flex flex-column align-items-start">
+                                <strong class="d-inline-block mb-2 text-primary">
+                                    <t t-esc="car.name"/>
+                                </strong>
+                                <h6 class="mb-0">
+                                    <a class="text-dark" href="#"><t t-esc="car.description"/></a>
+                                </h6>
+                                <div class="mb-1 text-muted small">Nov 12</div>
+                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn btn-outline-primary btn-sm" role="button" href="http://www.jquery2dotnet.com/">Continue reading</a>
+                                </div>
+                                <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]"
+                                    t-attf-src="data:image/*;base64, {{car.file}}" style="width: 200px; height: 250px;" />
+                            </div>
+                        </div>
+                    </t>
                 </div>
             </div>
         </t>
