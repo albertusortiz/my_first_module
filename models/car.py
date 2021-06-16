@@ -15,6 +15,12 @@ class my_first_module(models.Model):
     file=fields.Binary('File')
     description=fields.Text('Description')
 
+    engine_name=fields.Char("Engine Name")
+    architecture=fields.Char("Architecture")
+    engine_layout=fields.Char("Engine Layout")
+
+    maximum_speed=fields.Char('Maximum Speed')
+
     
 class ResPartnerInherit(models.Model):
     _inherit='res.partner'

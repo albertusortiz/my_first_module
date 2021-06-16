@@ -10,6 +10,20 @@ class CustomerPortalInherit(CustomerPortal):
 
 
 class MyFirstModule(http.Controller):
+    @http.route('/car/full_description', auth='public', type='http', website=True)
+    def display_car_full_description(self, **kw):
+        id_car=kw.get('id')
+        print("*"*50)
+        print('car id =',id_car)
+        print("*"*50)
+        car=request.env['car.car'].search([('id','=', id_car)])
+        vals={
+            'car': car
+        }
+        
+        return request.render('my_first_module.display_car_with_full_description',vals)
+
+
     @http.route('/ver_productos', auth='public', type='http', website=True)
     def index(self, **kw):
         products=request.env["product.template"].search([]).sudo()

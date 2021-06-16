@@ -19,6 +19,26 @@
                             <field name="description"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Technical Characteristics">
+                            <group>
+                                <group>
+                                    <field name="engine_name"/>
+                                    <field name="architecture"/>
+                                    <field name="engine_layout"/>                                    
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Performance">
+                            <group>
+                                <group>
+                                    <field name="maximum_speed"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Dimension and Weight"></page>
+                        <page string="Standar Equipment"></page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

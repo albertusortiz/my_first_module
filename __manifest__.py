@@ -35,6 +35,7 @@
         'views/account_inherit.xml',
         'views/ver_productos.xml',
         'views/assets.xml',
+        'views/display_car_full_description.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

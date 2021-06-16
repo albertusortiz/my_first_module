@@ -42,11 +42,12 @@
                                     <t t-esc="car.name"/>
                                 </strong>
                                 <h6 class="mb-0">
-                                    <a class="text-dark" href="#"><t t-esc="car.description"/></a>
+                                    <t t-esc="car.description"/>
                                 </h6>
-                                <div class="mb-1 text-muted small">Nov 12</div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                <a class="btn btn-outline-primary btn-sm" role="button" href="http://www.jquery2dotnet.com/">Continue reading</a>
+                                <div class="mb-1 text-muted small"><t t-esc="car.start_date"/></div>
+                                <a class="btn btn-outline-primary btn-sm" role="button" 
+                                    t-attf-href="/car/full_description?id=#{car.id}">Continue reading
+                                </a>
                                 </div>
                                 <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]"
                                     t-attf-src="data:image/*;base64, {{car.file}}" style="width: 200px; height: 250px;" />
